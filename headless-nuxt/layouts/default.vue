@@ -1,6 +1,6 @@
 <template>
     <main role="main">
-        <nav v-if="projects">
+        <nav>
             <nuxt-link to="/">Home</nuxt-link>
             <!-- <nuxt-link :to="`/projects/${project.slug}`" v-for="project in projects.data" :key="project.id">
                     {{ project.title }}
