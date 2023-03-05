@@ -1,24 +1,6 @@
-<!-- <template>
-    <div v-if="project">
-        titre : {{project.title}}
-        type : {{ project.type }}
-        <div>
-            description : {{ project.description }}
-        </div>
-        <img style="width: 100px;" :src='`${project.img.url}`' :alt="`${ project.img.name }`">
-        <span>Technologies :</span>
-        <ul>
-            <li v-for="technology in project.technologies" :key="technology.id">
-                {{ technology.name }}
-                <img style="width: 50px;" :src='`${technology.image.url}`' :alt="`${ technology.image.name }`">
-            </li>
-        </ul>
-        <nuxt-link :to="project.link" target="_blank">Lien du projet</nuxt-link>
-    </div>
-</template> -->
-
 <template>
     <div v-if="project" class="project-details">
+        <nuxt-link to="/" class="retour">Retour</nuxt-link>
         <h1>{{project.title}}</h1>
         <div class="project-type">{{ project.type }}</div>
         <div class="project-description">{{ project.description }}</div>
@@ -50,6 +32,14 @@ onMounted(async () => {
 </script>
 
 <style scoped>
+    .retour {
+        color: #0077cc;
+        text-decoration: none;
+        text-align: left;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
     .project-details {
         display: flex;
         flex-direction: column;
@@ -61,7 +51,12 @@ onMounted(async () => {
         box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
     }
 
-    .project-details h2 {
+    .project-details .retour {
+        align-self: flex-start;
+        margin: 0;
+    }
+
+    .project-details h1 {
         font-size: 30px;
         margin-bottom: 20px;
     }

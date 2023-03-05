@@ -1,22 +1,32 @@
 <template>
     <main role="main">
-        <nav>
-            <nuxt-link to="/">Home</nuxt-link>
-            <!-- <nuxt-link :to="`/projects/${project.slug}`" v-for="project in projects.data" :key="project.id">
-                    {{ project.title }}
-            </nuxt-link> -->
-        </nav>
         <slot/>
     </main>
 </template>
 
-<script setup>
+<style scoped>
 
-    // const { find } = useStrapi()
-    // const projects = ref()
+    main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+    }
 
-    // onMounted(async () => {
-    //     projects.value = await find('projects', { populate: 'deep'})
-    // })
+    nav {
+        display: flex;
+        margin-bottom: 20px;
+    }
 
-</script>
+    nav a {
+        color: #0077cc;
+        text-decoration: none;
+        font-size: 16px;
+        margin-left: 20px;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+</style>
